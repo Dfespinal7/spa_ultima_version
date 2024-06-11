@@ -1,0 +1,178 @@
+{% extends 'agenda/base.html' %}
+{% load static %}
+{% block titul %}Uñas Lindas{% endblock %}
+
+{% block contenedor %}
+
+<div id="demo" class="carousel slide container-fluid" data-bs-ride="carousel">
+
+
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="jumbotron mt-2 p-5 text-black text-center" style="height: 380px;" id="banner1">
+                    <div class="jumbotron-overlay ">
+                        <div class="jumbotron-content">
+                            <h1 class="display-1"> <strong>¡Promoción de Martes!</strong></h1>
+                            <h1 class="display-5"><strong> 20% </strong></h1>
+                            <h2>De descuento</h2>
+                            <h3>En servicios seleccionados</h3>
+
+                            {% if request.session.logueo %}
+                            <a type="button" class="btn btn-dark btn-lg rounded-pill mt-4"
+                                href="{% url 'form_cita_cliente' %}">Agendar Cita</a>
+
+                            {% else %}
+
+                            <a type="button" class="btn btn-dark btn-lg rounded-pill mt-4"
+                                href="{% url 'login' %}">Inicie sesión para agendar</a>
+                            {% endif %}
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="jumbotron mt-2 p-5 text-black text-center" style="height: 380px;" id="banner2">
+                    <div class="jumbotron-overlay">
+                        <div class="jumbotron-content">
+                            <h1 class="display-1"> <strong>¡Promoción de Martes!</strong></h1>
+                            <h1 class="display-5"><strong> 20% </strong></h1>
+                            <h2>De descuento</h2>
+                            <h3>En servicios seleccionados</h3>
+                            {% if request.session.logueo %}
+                            <a type="button" class="btn btn-dark btn-lg rounded-pill mt-4"
+                                href="{% url 'form_cita_cliente' %}">Agendar Cita</a>
+
+                            {% else %}
+
+                            <a type="button" class="btn btn-dark btn-lg rounded-pill mt-4"
+                                href="{% url 'login' %}">Inicie sesión para agendar</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="jumbotron mt-2 p-5 text-black text-center" style="height: 380px;" id="banner3">
+                    <div class="jumbotron-overlay">
+                        <div class="jumbotron-content">
+                            <h1 class="display-1"> <strong>¡Promoción de Martes!</strong></h1>
+                            <h1 class="display-5"><strong> 20% </strong></h1>
+                            <h2>De descuento</h2>
+                            <h3>En servicios seleccionados</h3>
+                            {% if request.session.logueo %}
+                            <a type="button" class="btn btn-dark btn-lg rounded-pill mt-4"
+                                href="{% url 'form_cita_cliente' %}">Agendar Cita</a>
+
+                            {% else %}
+
+                            <a type="button" class="btn btn-dark btn-lg rounded-pill mt-4"
+                                href="{% url 'login' %}">Inicie sesión para agendar</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <!-- Galeria de imagenes -->
+    <div id="container">
+        <div class="item">
+            <img src="{% static 'agenda/img/5.jpg' %}" alt="" class="box">
+        </div>
+        <div class="item">
+            <img src="{% static 'agenda/img/4.jpg' %}" alt="" class="box">
+        </div>
+        <div class="item">
+            <img src="{% static 'agenda/img/6.jpg' %}" alt="" class="box">
+        </div>
+        <div class="item">
+            <img src="{% static 'agenda/img/2.jpg' %}" alt="" class="box">
+        </div>
+        <div class="item">
+            <img src="{% static 'agenda/img/7.jpg' %}" alt="" class="box">
+        </div>
+        <div class="item">
+            <img src="{% static 'agenda/img/1.jpg' %}" alt="" class="box">
+        </div>
+    </div>
+
+    <div class="row1">
+        <h1 id="servicios">Algunos de Nuestros Servicios</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-4 p-4">
+                    <div class="card text-center">
+                        <img src="{% static 'agenda/img/manicure.png' %}" class="card-img-top" alt="card1">
+                        <div class="card-body">
+                            <h5 class="card-title">Manicure</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="{% url 'login' %}" class="btn btn-dark btn-lg rounded-pill">Inicie sesión para agendar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 p-4">
+                    <div class="card text-center">
+                        <img src="{% static 'agenda/img/mscarilla.png' %}" class="card-img-top" alt="card2">
+                        <div class="card-body">
+                            <h5 class="card-title">Skin Care</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="{% url 'login' %}" class="btn btn-dark btn-lg rounded-pill">Inicie sesión para agendar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 p-4">
+                    <div class="card text-center">
+                        <img src="{% static 'agenda/img/masaje.png' %}" class="card-img-top" alt="card3">
+                        <div class="card-body">
+                            <h5 class="card-title">Masajes</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="{% url 'login' %}" class="btn btn-dark btn-lg rounded-pill">Inicie sesión para agendar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <footer class="footer" style="background-color: black; padding: 20px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4 style="color: white;">Contacto</h4>
+                            <p style="color: white;">Dirección: Calle Principal, Ciudad, País</p>
+                            <p style="color: white;">Teléfono: (123) 456-7890</p>
+                            <p style="color: white;">Correo Electrónico: info@unaslindas.com</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 style="color: white;">Síguenos en Redes Sociales</h4>
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><a href="#"><i class="fab fa-facebook fa-2x" style="color: #1877f2;"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fab fa-twitter fa-2x" style="color: #1da1f2;"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fab fa-instagram fa-2x" style="color: #e1306c;"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+{% endblock %}
+

@@ -1,0 +1,51 @@
+{% extends 'agenda/base.html' %}
+{% load static %}
+{% block titul %}Listar pago{% endblock %}
+
+{% block contenedor %}
+<section class="container mt-3 mb-3 p-3" style="background-color: #ACB6F9; max-width: 1400px; border-radius: 0.3cm;">
+  <h1 class="text-center">Listar Pagos</h1>
+  
+  <a class="btn btn-dark rounded-pill" href="{% url 'form_pagos' %}" class="text-white">Crear Pago</a>
+  
+  <form class="d-flex m-2" role="search" method="post" action="{% url 'buscar_pago' %}">
+    {% csrf_token %}
+    <input class="form-control me-2" type="search" placeholder="Ingrese nombre de usuario que hizo el pago" aria-label="Search" name="buscarpago">
+    <button class="btn btn-outline-success" type="submit">Buscar</button>
+  </form>
+
+  {% if data %}
+  <table class="table w-75 mx-auto text-center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Usuario</th>
+            <th>Fecha de pago</th>
+            <th>Monto</th>
+            <th>Estado de pago</th>
+            <th>Servicio</th>
+            <th>Acción</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in data %}
+        <tr>
+            <td>{{i.idPago}}</td>
+            <td>{{i.idUsuario}}</td>
+            <td>{{i.fechaPago}}</td>
+            <td>{{i.monto}}</td>
+            <td>{{i.estadoPago}}</td>
+            <td>{{i.servicio}}</td>
+            <td>
+                <a class="btn btn-warning" href="{% url 'editar_pagos' i.idPago %}" class="text-white">Editar</a>
+                <a class="btn btn-danger" onclick="return confirm('¿Estás seguro de eliminar?')" href="{% url 'eliminar_pagos' i.idPago %}" class="text-white">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p class="text-center">No hay registros</p>
+  {% endif %}
+</section>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'agenda/base.html' %}
+{% load static %}
+{% block titul %}listar servicio{% endblock %}
+
+{% block contenedor %}
+<section class="container mt-3 mb-3 p-3" style="background-color: #ACB6F9; max-width: 1400px; border-radius: 0.3cm;">
+<h1 class="text-center">listar servicio</h1>  
+  <a class="btn btn-dark rounded-pill mx-auto" href="{% url 'form_servicio' %}">Crear Servicio</a>
+
+  <form class="d-flex m-2" role="search" method="post" action="{% url 'buscar_servicio' %}">
+    {% csrf_token %}
+    <input class="form-control me-2" type="search" placeholder="Ingrese nombre de usuario" aria-label="Search" name="ser">
+    <button class="btn btn-outline-success" type="submit">Buscar</button>
+  </form>
+
+  {% if datos %}
+  <table class="table w-75 mx-auto text-center">
+    <tr>
+      <th>id</th>
+      <th>nombre</th>
+      <th>duracion</th>
+      <th>descripcion</th>
+      <th>precio</th>
+      <th>disponibilidad</th>
+      <th>accion</th>
+    </tr>
+    {% for i in datos %}
+    <tr>
+      <td>{{i.idServicio}}</td>
+      <td>{{i.nombre}}</td>
+      <td>{{i.duracion}}</td>
+      <td>{{i.descripcion}}</td>
+      <td>{{i.precio}}</td>
+      <td>{{i.disponibilidad}}</td>
+      <td>
+        <a class="btn btn-warning" href="{% url 'edit_form_servicio' i.idServicio %}">Editar</a>
+        <a class="btn btn-danger" href="{% url 'eliminar_servicio' i.idServicio %}" onclick="return confirm('¿Estas seguro de eliminar?')"> Eliminar<a/>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+ {% else %}
+ no hay registros
+ {% endif %}
+        
+      
+   
+                           
+</section>
+{% endblock %}

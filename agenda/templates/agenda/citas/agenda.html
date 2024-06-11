@@ -1,0 +1,75 @@
+{% extends 'agenda/base.html' %}
+{% load static %}
+{% block titul %}Agendar{% endblock %}
+
+{% block contenedor %}
+  <section class="container mt-3 mb-3" style="background-color: #ACB6F9; max-width: 1000px; border-radius: 0.3cm;">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3 p-4">
+                <h2>Agendar Cita</h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Escribe tu nombre">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="email" placeholder="Escribe tu correo electrónico">
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label">Teléfono</label>
+                        <input type="tel" class="form-control" id="telefono"
+                            placeholder="Escribe tu número de teléfono">
+                    </div>
+                    <div class="mb-3">
+                        <label for="empleado" class="form-label">Selecciona un Empleado</label>
+                        <select class="form-select" id="empleado" name="empleado">
+                            <option value="null">----</option>
+                            <option value="María López">María López</option>
+                            <option value="Juan Rodríguez">Juan Rodríguez</option>
+                            <option value="Laura González">Laura González</option>
+                            <option value="Carlos Pérez">Carlos Pérez</option>
+                            <option value="Ana Martínez">Ana Martínez</option>
+                            <option value="David García">David García</option>
+                            <option value="Patricia Sánchez">Patricia Sánchez</option>
+                            <option value="Manuel Fernández">Manuel Fernández</option>
+                            <option value="Isabel Ramírez">Isabel Ramírez</option>
+                            <option value="Sergio Torres">Sergio Torres</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="servicio" class="form-label">Selecciona un Servicio</label>
+                        <select class="form-select" id="servicio" name="servicio">
+                            <option value="null">----</option>
+                            <option value="Manicura Básica">Manicura Básica - $25</option>
+                            <option value="Manicura Francesa">Manicura Francesa - $30</option>
+                            <option value="Pedicura Spa">Pedicura Spa - $40</option>
+                            <option value="Uñas de Acrílico">Uñas de Acrílico - $50</option>
+                            <option value="Uñas de Gel">Uñas de Gel - $55</option>
+                            <option value="Manicura y Pedicura de Lujo">Manicura y Pedicura de Lujo - $75</option>
+                            <option value="Diseño de Uñas de Arte">Diseño de Uñas de Arte (Varía en precio)</option>
+                            <option value="Eliminación de Esmalte en Gel">Eliminación de Esmalte en Gel - $15</option>
+                            <option value="Refuerzo de Uñas de Gel">Refuerzo de Uñas de Gel - $30</option>
+                            <option value="Uñas de Porcelana">Uñas de Porcelana - $60</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fecha" class="form-label">Fecha de la Cita</label>
+                        <input type="date" class="form-control" id="fecha">
+                    </div>
+                    <div class="mb-3">
+                        <label for="hora" class="form-label">Hora de la Cita</label>
+                        <input type="time" class="form-control" id="hora">
+                    </div>
+                    <div class="mb-3">
+                        <label for="mensaje" class="form-label">Mensaje (opcional)</label>
+                        <textarea class="form-control" id="mensaje" rows="3"
+                            placeholder="Escribe un mensaje (opcional)"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-dark rounded-pill">Agendar Cita</button>
+                </form>
+            </div>
+        </div>
+    </section>
+   
+{% endblock %}

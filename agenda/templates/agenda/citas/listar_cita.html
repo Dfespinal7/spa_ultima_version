@@ -1,0 +1,52 @@
+{% extends 'agenda/base.html' %}
+{% load static %}
+{% block titul %}Listar cita{% endblock %}
+
+{% block contenedor %}
+<section class="container mt-3 mb-3 p-3" style="background-color: #ACB6F9; max-width: 1400px; border-radius: 0.3cm;">
+<h1  class="text-center"> Listar cita</h1>
+  <a class="btn btn-dark rounded-pill text-white"href="{% url 'form_citas' %}">Crear Cita</a>
+
+  <form class="d-flex m-2" role="search" method="post" action="{% url 'buscar_cita' %}">
+    {% csrf_token %}
+    <input class="form-control me-2" type="search" placeholder="Ingrese nombre de usuario" aria-label="Search" name="buscarcita">
+    <button class="btn btn-outline-success" type="submit">Buscar</button>
+  </form>
+
+  {% if datos %}
+  <table class="table w-75 mx-auto text-center">
+    <tr>
+        <th>ID</th>
+        <th>Usuario</th>
+        <th>Fecha</th>
+        <th>Lugar</th>
+        <th>Hora</th>
+        <th>Servicio</th>
+        <th>Empleado</th>
+        <th>Acción</th>
+    </tr>
+    {% for i in datos %}
+    <tr>
+        <td>{{i.idCita}}</td>
+        <td>{{i.idUsuario}}</td>
+        <td>{{i.fecha}}</td>
+        <td>{{i.lugar}}</td>
+        <td>{{i.hora}}</td>
+        <td>{{i.servicio}}</td>
+        <td>{{i.empleado}}</td>
+        <td>
+            <a class="btn btn-warning" href="{% url 'editar_cita' i.idCita %}">Editar</a>
+            <a class="btn btn-danger" href="{% url 'eliminar_cita' i.idCita %}" onclick="return confirm('¿Estas seguro de eliminar?')" >Eliminar</a>
+        </td>
+    </tr>
+    {% endfor %}
+    {% else %}
+    no hay registros
+    {% endif %}
+  </table>
+            
+                        
+
+                    
+</section>
+{% endblock %}

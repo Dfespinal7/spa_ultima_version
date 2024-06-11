@@ -1,0 +1,56 @@
+{% extends 'agenda/base.html' %}
+{% load static %}
+{% block titul %}Formulario de Pagos{% endblock %}
+
+{% block contenedor %}
+<section class="container mt-3 mb-3" style="background-color: #ACB6F9; max-width: 1000px; border-radius: 0.3cm;">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3 p-4">
+    <h1 class="text-center">Formulario de Pagos</h1>
+    {% if id %}
+        <h1>Editar Pago</h1>
+    {% endif %}
+
+    <form action="{% url 'guardar_pagos' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" value="{{id}}" name="idPago">
+        <div class="mb-3">
+            <label for="idUsuario" class="form-label">Usuario</label>
+            <select name="idUsuario" id="idUsuario" class="form-select">
+                {% for i in usuarios %}
+                    <option value="{{ i.idUsuario }}" {% if data.usuarios.idUsuario == i.idUsuario %}selected{% endif %}>{{ i.nombre }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="fechaPago" class="form-label">Fecha de Pago</label>
+            <input type="date" class="form-control" name="fechaPago" id="fechaPago" value="{{data.fechaPago|date:'Y-m-d'}}" required>
+        </div>
+        <div class="mb-3">
+            <label for="monto" class="form-label">Monto</label>
+            <input type="text" class="form-control" name="monto" id="monto" value="{{data.monto}}" required>
+        </div>
+        <div class="mb-3">
+            <label for="estadoPago" class="form-label">Estado de Pago</label>
+            <input type="text" class="form-control" name="estadoPago" id="estadoPago" value="{{data.estadoPago}}" required>
+        </div>
+        <div class="mb-3">
+            <label for="servicio" class="form-label">Servicio</label>
+            <select name="servicio" id="servicio" class="form-select">
+                {% for s in servicio %}
+                    <option value="{{ s.idServicio }}" {% if data.servicio.idServicio == s.idServicio %}selected{% endif %} required>{{ s.nombre }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="d-flex justify-content-center">
+            {% if id %}
+                <button type="submit" class="btn btn-dark rounded-pill">Actualizar</button>
+            {% else %}
+                <button type="submit" class="btn btn-dark rounded-pill">Crear</button>
+            {% endif %}
+        </div>
+    </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

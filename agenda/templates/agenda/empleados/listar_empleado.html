@@ -1,0 +1,54 @@
+{% extends 'agenda/base.html' %}
+{% load static %}
+{% block titul %}Listar Empleado{% endblock %}
+
+{% block contenedor %}
+<section class="container mt-3 mb-3 p-3" style="background-color: #ACB6F9; max-width: 1400px; border-radius: 0.3cm;">
+<h1 class="text-center">listar empleados</h1>  
+  <a class="btn btn-dark rounded-pill mx-auto" href="{% url 'form_empleado' %}">Crear Empleado</a>
+
+  <form class="d-flex m-2" role="search" method="post" action="{% url 'buscar_empleado' %}">
+    {% csrf_token %}
+    <input class="form-control me-2" type="search" placeholder="Ingrese nombre del empleado" aria-label="Search" name="empleado">
+    <button class="btn btn-outline-success" type="submit">Buscar</button>
+  </form>
+  
+  {% if data %}
+  <table class="table w-75 mx-auto text-center">
+    <tr>
+        <th>ID</th>
+        <th>NOMBRE</th>
+        <th>APELLIDO</th>
+        <th>CONTACTO</th>
+        <th>EMAIL</th>
+        <th>FECHA DE NACIMIENTO</th>
+        <th>CARGO</th>
+        <th>SALARIO</th>
+        <th>ACCION</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{i.idEmpleado}}</td>
+        <td>{{i.nombre}}</td>
+        <td>{{i.apellido}}</td>
+        <td>{{i.contacto}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.fechaNacimiento}}</td>
+        <td>{{i.cargo}}</td>
+        <td>{{i.salario}}</td>
+        <td>
+            <a class="btn btn-warning" href="{% url 'editar_empleado' i.idEmpleado %}">Editar</a>
+            <a class="btn btn-danger"  onclick="return confirm('¿Estas seguro de eliminar?')" class="eliminar" href="{% url 'eliminar_empleado' i.idEmpleado %}">Eliminar</a>
+            
+        </td>
+        
+    </tr>
+    {% endfor %}
+  </table>
+  {% else %}
+  no hay registros
+  {% endif %}
+  </section>
+
+
+{% endblock %}

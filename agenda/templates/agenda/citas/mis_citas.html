@@ -1,0 +1,39 @@
+{% extends 'agenda/base.html' %}
+{% load static %}
+{% block titul %}Mis citas{% endblock %}
+
+{% block contenedor %}
+<section class="container mt-3 mb-3 p-3" style="background-color: #ACB6F9; max-width: 1400px; border-radius: 0.3cm;">
+    <h1 class="text-center">Mis Citas</h1>
+    {% if citas %}
+    <table class="table w-75 mx-auto text-center">
+        <tr>
+            <th>ID</th>
+            <th>Usuario</th>
+            <th>Fecha</th>
+            <th>Lugar</th>
+            <th>Hora</th>
+            <th>Servicio</th>
+            <th>Empleado</th>
+            <th>Acción</th>
+        </tr>
+        {% for i in citas %}
+        <tr>
+            <td>{{i.idCita}}</td>
+            <td>{{i.idUsuario}}</td>
+            <td>{{i.fecha}}</td>
+            <td>{{i.lugar}}</td>
+            <td>{{i.hora}}</td>
+            <td>{{i.servicio}}</td>
+            <td>{{i.empleado}}</td>
+            <td>
+                <a class="btn btn-danger" href="{% url 'eliminar_cita' i.idCita %}" onclick="return confirm('¿Estás seguro de eliminar?')">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <h1 class="text-center">No tienes citas asignadas aún</h1>
+    {% endif %}
+</section>
+{% endblock %}

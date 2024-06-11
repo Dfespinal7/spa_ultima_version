@@ -1,0 +1,102 @@
+{% extends 'agenda/base.html' %}
+{% load static %}
+{% block titul %}Empleados{% endblock %}
+
+{% block contenedor %}
+<section class="container mt-5 p-3" style="background-color: #ACB6F9;">
+        <h2 style="text-align: center;">Nuestros Empleados</h2>
+        <div class="row p-2">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="{% static 'agenda/img/persona1.png' %}"   class="card-img-top" alt="Empleado 1">
+                    <div class="card-body">
+                        <h5 class="card-title">María Pérez</h5>
+                        <p class="card-text"><strong>Especialidad:</strong> Manicura Básica</p>
+                        <p class="card-text"><strong>Descripción:</strong> María es una manicurista experta en el cuidado básico de las uñas. Le encanta ver cómo sus clientes salen con manos hermosas y cuidadas después de cada cita.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="{% static 'agenda/img/persona2.png' %}" class="card-img-top" alt="Empleado 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Luis Rodríguez</h5>
+                        <p class="card-text"><strong>Especialidad:</strong> Uñas de Acrílico</p>
+                        <p class="card-text"><strong>Descripción:</strong> Lius es un apasionado de la manicura francesa, un estilo elegante y clásico. Disfruta de cada oportunidad para hacer que las manos de sus clientes luzcan sofisticadas y hermosas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="{% static 'agenda/img/persona3.png' %}" class="card-img-top" alt="Empleado 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Ana García</h5>
+                        <p class="card-text"><strong>Especialidad:</strong> Pedicura Spa</p>
+                        <p class="card-text"><strong>Descripción:</strong> Ana se especializa en tratamientos de pedicura spa, proporcionando a sus clientes una experiencia relajante y rejuvenecedora. Le gusta ayudar a que sus clientes se sientan mimados y cuidados.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="{% static 'agenda/img/persona4.png' %}" class="card-img-top" alt="Empleado 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Carlos López</h5>
+                        <p class="card-text"><strong>Especialidad:</strong> Uñas de Gel</p>
+                        <p class="card-text"><strong>Descripción:</strong> Carlos es un apasionado de la belleza de las uñas. Le encanta crear diseños únicos que hacen que sus clientes se sientan especiales y hermosos.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="{% static 'agenda/img/persona5.png' %}" class="card-img-top" alt="Empleado 5">
+                    <div class="card-body">
+                        <h5 class="card-title">Laura Martínez</h5>
+                        <p class="card-text"><strong>Especialidad:</strong> Manicura Francesa</p>
+                        <p class="card-text"><strong>Descripción:</strong> Laura es una experta en manicura francesa, conocida por su atención meticulosa a los detalles. Le apasiona hacer que las manos de sus clientes luzcan elegantes y sofisticadas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="{% static 'agenda/img/persona6.png' %}" class="card-img-top" alt="Empleado 6">
+                    <div class="card-body">
+                        <h5 class="card-title">David González</h5>
+                        <p class="card-text"><strong>Especialidad:</strong> Diseño de Uñas de Arte</p>
+                        <p class="card-text"><strong>Descripción:</strong> David es un artista del diseño de uñas. Le apasiona crear obras maestras en las uñas de sus clientes, desde diseños florales hasta patrones abstractos.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="{% static 'agenda/img/persona7.png' %}" class="card-img-top" alt="Empleado 7">
+                    <div class="card-body">
+                        <h5 class="card-title">Sofía Ramírez</h5>
+                        <p class="card-text"><strong>Especialidad:</strong> Uñas de Porcelana</p>
+                        <p class="card-text"><strong>Descripción:</strong> Sofía es experta en uñas de porcelana. Le encanta ver la transformación que experimentan las manos de sus clientes y cómo las uñas de porcelana pueden darles confianza.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="{% static 'agenda/img/persona8.png' %}" class="card-img-top" alt="Empleado 8">
+                    <div class="card-body">
+                        <h5 class="card-title">Juan Torres</h5>
+                        <p class="card-text"><strong>Especialidad:</strong> Eliminación de Esmalte en Gel</p>
+                        <p class="card-text"><strong>Descripción:</strong> Juan se especializa en la eliminación cuidadosa del esmalte en gel. Disfruta de la satisfacción de ver las uñas naturales de sus clientes en perfecto estado después del servicio.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="{% static 'agenda/img/persona9.png' %}" class="card-img-top" alt="Empleado 9">
+                    <div class="card-body">
+                        <h5 class="card-title">Elena Vargas</h5>
+                        <p class="card-text"><strong>Especialidad:</strong> Refuerzo de Uñas de Gel</p>
+                        <p class="card-text"><strong>Descripción:</strong> Elena se dedica al refuerzo y retoque de uñas de gel existentes. Le encanta ayudar a sus clientes a mantener unas uñas de aspecto impecable y duradero.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'agenda/base.html' %}
+
+{% load static %}
+
+{% block titul %}Usuarios {% endblock %}
+
+{% block contenedor %}
+<section class="container mt-3 mb-3 p-3" style="background-color: #ACB6F9; max-width: 1400px; border-radius: 0.3cm;">
+    <h1 class="text-center">Usuarios</h1>
+    <a class="btn btn-dark rounded-pill mx-auto" href="{% url 'form_usuario' %}">Crear</a>
+
+    <form class="d-flex m-2" role="search" method="post" action="{% url 'buscar_usuario' %}">
+        {% csrf_token %}
+        <input class="form-control me-2" type="search" placeholder="Ingrese nombre de usuario" aria-label="Search" name="buscar">
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+      </form>
+    {% if data %}
+    <table class="table w-75 mx-auto text-center">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Contacto</th>
+                <th>Email</th>
+                <th>Nombre de usuario</th>
+                <th>Contraseña</th>
+                <th>Rol</th>
+                <th>Accion</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in data %}
+            <tr>
+                <td>{{i.idUsuario}}</td>
+                <td>{{i.nombre}}</td>
+                <td>{{i.apellido}}</td>
+                <td>{{i.contacto}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.nombreUsuario}}</td>
+                <td>{{i.contrasena}}</td>
+                {% if i.rol == 1 %}
+                <td>Administrador</td>
+                {% elif i.rol == 2 %}
+                <td>Empleado</td>
+                {% elif i.rol == 3 %}
+                <td>Cliente</td>
+                {% endif %}
+                <td></td>
+                <td>
+                    <a class="btn btn-warning" href="{% url 'usuario_editar_formulario' i.idUsuario %}">Editar</a>
+                    <a class="btn btn-danger" onclick="return confirm('¿Estás seguro de eliminar?')" href="{% url 'usuario_eliminar' i.idUsuario %}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p class="text-center">No hay resultados</p>
+    {% endif %}
+</section>
+{% endblock %}

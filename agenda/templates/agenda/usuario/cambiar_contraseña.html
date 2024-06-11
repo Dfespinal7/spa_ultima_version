@@ -1,0 +1,26 @@
+{% extends 'agenda/base.html' %}
+{% block titul %}Cambiar Contraseña{% endblock %}
+
+{% block contenedor %}
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header bg-dark text-white">
+          <h4 class="mb-0">Cambiar Contraseña</h4>
+        </div>
+        <div class="card-body">
+          <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="nueva_contraseña" class="form-label">Nueva Contraseña</label>
+              <input type="password" class="form-control" id="nueva_contraseña" name="nueva_contraseña" required>
+            </div>
+            <button type="submit" class="btn btn-dark">Guardar Cambios</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

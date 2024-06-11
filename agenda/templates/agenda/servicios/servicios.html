@@ -1,0 +1,212 @@
+{% extends 'agenda/base.html' %}
+{% load static %}
+{% block titul %}Servicios{% endblock %}
+
+{% block contenedor %}
+<section class="container mt-5 p-5" style="background-color: #ACB6F9;">
+        <h2>Servicios de Spa de Uñas</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <img src="{% static 'agenda/img/manicure.png' %}" class="card-img-top" alt="Servicio 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Manicura Básica</h5>
+                        <p class="card-text">Un tratamiento de manicura básica que incluye limado, cutículas y
+                            esmaltado.</p>
+                        <p class="card-text"><strong>Precio: $25</strong></p>
+                        {% if request.session.logueo %}
+                            <a type="button" class="btn btn-dark btn-lg rounded-pill mt-4"
+                                href="{% url 'form_cita_cliente' %}">Agendar Cita</a>
+
+                            {% else %}
+
+                            <a type="button" class="btn btn-dark btn-lg rounded-pill mt-4"
+                                href="{% url 'login' %}">Inicie sesión para agendar</a>
+                            {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <img src="{% static 'agenda/img/manfrancesa.png' %}" class="card-img-top" alt="Servicio 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Manicura Francesa</h5>
+                        <p class="card-text">Una manicura elegante con esmalte blanco en la punta de las uñas.</p>
+                        <p class="card-text"><strong>Precio: $30</strong></p>
+                        {% if request.session.logueo %}
+                            <a type="button" class="btn btn-dark btn-lg rounded-pill mt-4"
+                                href="{% url 'form_cita_cliente' %}">Agendar Cita</a>
+
+                            {% else %}
+
+                            <a type="button" class="btn btn-dark btn-lg rounded-pill mt-4"
+                                href="{% url 'login' %}">Inicie sesión para agendar</a>
+                            {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <img src="{% static 'agenda/img/pedicure.png' %}" class="card-img-top" alt="Servicio 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Pedicura Spa</h5>
+                        <p class="card-text">Un tratamiento completo que incluye limpieza, exfoliación, masaje y
+                            esmaltado para pies.</p>
+                        <p class="card-text"><strong>Precio: $40</strong></p>
+                        {% if request.session.logueo %}
+                            <a type="button" class="btn btn-dark btn-lg rounded-pill mt-4"
+                                href="{% url 'form_cita_cliente' %}">Agendar Cita</a>
+
+                            {% else %}
+
+                            <a type="button" class="btn btn-dark btn-lg rounded-pill mt-4"
+                                href="{% url 'login' %}">Inicie sesión para agendar</a>
+                            {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <img src="{% static 'agenda/img/unasacrilico.png' %}"  class="card-img-top" alt="Servicio 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Uñas de Acrílico</h5>
+                        <p class="card-text">Extensiones de uñas de acrílico que ofrecen una apariencia natural y
+                            duradera.</p>
+                        <p class="card-text"><strong>Precio: $50</strong></p>
+                        {% if request.session.logueo %}
+                            <a type="button" class="btn btn-dark btn-lg rounded-pill mt-4"
+                                href="{% url 'form_cita_cliente' %}">Agendar Cita</a>
+
+                            {% else %}
+
+                            <a type="button" class="btn btn-dark btn-lg rounded-pill mt-4"
+                                href="{% url 'login' %}">Inicie sesión para agendar</a>
+                            {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <img src="{% static 'agenda/img/unasengel.png' %}" class="card-img-top" alt="Servicio 5">
+                    <div class="card-body">
+                        <h5 class="card-title">Uñas de Gel</h5>
+                        <p class="card-text">Extensiones de uñas de gel que son flexibles y tienen un aspecto brillante.
+                        </p>
+                        <p class="card-text"><strong>Precio: $55</strong></p>
+                        {% if request.session.logueo %}
+                            <a type="button" class="btn btn-dark btn-lg rounded-pill mt-4"
+                                href="{% url 'form_cita_cliente' %}">Agendar Cita</a>
+
+                            {% else %}
+
+                            <a type="button" class="btn btn-dark btn-lg rounded-pill mt-4"
+                                href="{% url 'login' %}">Inicie sesión para agendar</a>
+                            {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <img src="{% static 'agenda/img/manicuradelujo.png' %}" class="card-img-top" alt="Servicio 6">
+                    <div class="card-body">
+                        <h5 class="card-title">Manicura y Pedicura de Lujo</h5>
+                        <p class="card-text">Un tratamiento completo de manicura y pedicura que incluye masaje y
+                            mascarillas.</p>
+                        <p class="card-text"><strong>Precio: $75</strong></p>
+                        {% if request.session.logueo %}
+                            <a type="button" class="btn btn-dark btn-lg rounded-pill mt-4"
+                                href="{% url 'form_cita_cliente' %}">Agendar Cita</a>
+
+                            {% else %}
+
+                            <a type="button" class="btn btn-dark btn-lg rounded-pill mt-4"
+                                href="{% url 'login' %}">Inicie sesión para agendar</a>
+                            {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <img src="{% static 'agenda/img/disenodeunasarte.png' %}" class="card-img-top" alt="Servicio 7">
+                    <div class="card-body">
+                        <h5 class="card-title">Diseño de Uñas de Arte</h5>
+                        <p class="card-text">Diseños creativos y personalizados en las uñas, desde diseños florales
+                            hasta patrones abstractos.</p>
+                        <p class="card-text"><strong>Precio: Varía</strong></p>
+                        {% if request.session.logueo %}
+                            <a type="button" class="btn btn-dark btn-lg rounded-pill mt-4"
+                                href="{% url 'form_cita_cliente' %}">Agendar Cita</a>
+
+                            {% else %}
+
+                            <a type="button" class="btn btn-dark btn-lg rounded-pill mt-4"
+                                href="{% url 'login' %}">Inicie sesión para agendar</a>
+                            {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <img src="{% static 'agenda/img/eliminaciondeesmalte.png' %}" class="card-img-top" alt="Servicio 8">
+                    <div class="card-body">
+                        <h5 class="card-title">Eliminación de Esmalte en Gel</h5>
+                        <p class="card-text">Un servicio para eliminar cuidadosamente el esmalte en gel sin dañar las
+                            uñas naturales.</p>
+                        <p class="card-text"><strong>Precio: $15</strong></p>
+                        {% if request.session.logueo %}
+                            <a type="button" class="btn btn-dark btn-lg rounded-pill mt-4"
+                                href="{% url 'form_cita_cliente' %}">Agendar Cita</a>
+
+                            {% else %}
+
+                            <a type="button" class="btn btn-dark btn-lg rounded-pill mt-4"
+                                href="{% url 'login' %}">Inicie sesión para agendar</a>
+                            {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <img src="{% static 'agenda/img/refuerzounasgel.png' %}" class="card-img-top" alt="Servicio 9">
+                    <div class="card-body">
+                        <h5 class="card-title">Refuerzo de Uñas de Gel</h5>
+                        <p class="card-text">Un servicio de mantenimiento para reforzar y retocar las uñas de gel
+                            existentes.</p>
+                        <p class="card-text"><strong>Precio: $30</strong></p>
+                        {% if request.session.logueo %}
+                            <a type="button" class="btn btn-dark btn-lg rounded-pill mt-4"
+                                href="{% url 'form_cita_cliente' %}">Agendar Cita</a>
+
+                            {% else %}
+
+                            <a type="button" class="btn btn-dark btn-lg rounded-pill mt-4"
+                                href="{% url 'login' %}">Inicie sesión para agendar</a>
+                            {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <img src="{% static 'agenda/img/unasporcelana.png' %}" class="card-img-top" alt="Servicio 10">
+                    <div class="card-body">
+                        <h5 class="card-title">Uñas de Porcelana</h5>
+                        <p class="card-text">Extensiones de uñas de porcelana que ofrecen una apariencia natural y
+                            duradera.</p>
+                        <p class="card-text"><strong>Precio: $60</strong></p>
+                        {% if request.session.logueo %}
+                            <a type="button" class="btn btn-dark btn-lg rounded-pill mt-4"
+                                href="{% url 'form_cita_cliente' %}">Agendar Cita</a>
+
+                            {% else %}
+
+                            <a type="button" class="btn btn-dark btn-lg rounded-pill mt-4"
+                                href="{% url 'login' %}">Inicie sesión para agendar</a>
+                            {% endif %}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+   
+{% endblock %}
